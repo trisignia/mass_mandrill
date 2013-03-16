@@ -1,5 +1,3 @@
-require File.expand_path('lib/mass_mandrill/mandrill_mail')
-
 module MassMandrill
   class MandrillMailer
     attr_reader :message
