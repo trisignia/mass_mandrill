@@ -1,6 +1,6 @@
-require File.expand_path('lib/mandrill_template/mandrill_mail')
+require File.expand_path('lib/mass_mandrill/mandrill_mail')
 
-module MandrillTemplate
+module MassMandrill
   class MandrillMailer
     attr_reader :message
 
@@ -15,7 +15,7 @@ module MandrillTemplate
     def mail(options)
       @message = build_message(options)
       @template_content = []
-      @template_name = options[:template] if options[:template].present?
+      @template_name = options[:template] if options[:template]
 
       MandrillMail.new(@template_name, @template_content, @message)
     end

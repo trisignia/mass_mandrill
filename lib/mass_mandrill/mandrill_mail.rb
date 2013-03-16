@@ -1,6 +1,6 @@
 require 'mandrill'
 
-module MandrillTemplate
+module MassMandrill
   class MandrillMail
     attr_reader :message
 
@@ -9,7 +9,7 @@ module MandrillTemplate
       @template_content = template_content
       @message = message
 
-      @mandrill = ::Mandrill::API.new(MandrillTemplate.config.api_key)
+      @mandrill = ::Mandrill::API.new(MassMandrill.config.api_key)
     end
 
     def deliver

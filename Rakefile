@@ -13,13 +13,13 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  gem.name = "mandrill_template"
-  gem.homepage = "http://github.com/strika/mandrill_template"
+  gem.name = "mass_mandrill"
+  gem.homepage = "https://github.com/trisignia/mass_mandrill"
   gem.license = "MIT"
   gem.summary = %Q{Send Mandrill emails}
-  gem.description = %Q{Send Mandrill tempalte emails}
+  gem.description = %Q{Send Mandrill template emails}
   gem.email = "nebojsa.stricevic@gmail.com"
-  gem.authors = ["Nebojša Stričević"]
+  gem.authors = ["Trisignia", "Nebojša Stričević"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -37,7 +37,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "mandrill_template #{version}"
+  rdoc.title = "mass_mandrill #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

@@ -1,6 +1,6 @@
 require 'singleton'
 
-module MandrillTemplate
+module MassMandrill
   class Config
     include Singleton
     attr_accessor :api_key
