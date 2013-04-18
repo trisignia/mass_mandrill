@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "mass_mandrill"
-  s.version = "0.1.1"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Trisignia", "Neboj\u{161}a Stri\u{10d}evi\u{107}"]
-  s.date = "2013-03-16"
+  s.date = "2013-04-18"
   s.description = "Send Mandrill template emails"
   s.email = "nebojsa.stricevic@gmail.com"
   s.extra_rdoc_files = [
