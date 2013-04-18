@@ -20,10 +20,13 @@ class ExampleMailer < MassMandrill::MandrillMailer
         :vars => [{ :name => 'first_name', :content => recipient.first_name }]
       }
     end
+    template_content = [{ :name => 'header', :content => '<h1>Hello World</h1>'
+}]
     
     mail(to: addresses,
          from: 'John Doe <john.doe@example.com>',
          subject: 'This is example notice!',
+         template_content: template_content,
          global_merge_vars: global_merge_vars,
          merge_vars: merge_vars)
   end

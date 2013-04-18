@@ -4,7 +4,8 @@ describe MassMandrill::MandrillMailer do
   class DummyMailer < MassMandrill::MandrillMailer
     def dummy_notification
       mail(:from => "Example Company <example.company@example.com>",
-          :global_merge_vars => { :name => 'var1', :content => 'var1_value' })
+           :global_merge_vars => { :name => "var1", :content => "var1_value" },
+           :template_content => [ { :name => "tc1", :content => "tc1_value" } ])
     end
   end
 
@@ -22,4 +23,6 @@ describe MassMandrill::MandrillMailer do
     specify { @message[:from_name].should == "Example Company" }
     specify { @message[:global_merge_vars].should == { :name => 'var1', :content => 'var1_value' } }
   end
+
+  specify { @mailer.template_content.should == [ { :name => "tc1", :content => "tc1_value" } ] }
 end

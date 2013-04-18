@@ -1,6 +1,6 @@
 module MassMandrill
   class MandrillMailer
-    attr_reader :message
+    attr_reader :message, :template_content
 
     def initialize(template_name)
       @template_name = template_name
@@ -12,7 +12,7 @@ module MassMandrill
 
     def mail(options)
       @message = build_message(options)
-      @template_content = []
+      @template_content = options[:template_content]
       @template_name = options[:template] if options[:template]
 
       MandrillMail.new(@template_name, @template_content, @message)

@@ -2,7 +2,7 @@ require 'mandrill'
 
 module MassMandrill
   class MandrillMail
-    attr_reader :message
+    attr_reader :message, :template_content
 
     def initialize(template_name, template_content, message)
       @template_name = template_name
