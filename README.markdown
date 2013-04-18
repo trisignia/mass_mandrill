@@ -20,8 +20,7 @@ class ExampleMailer < MassMandrill::MandrillMailer
         :vars => [{ :name => 'first_name', :content => recipient.first_name }]
       }
     end
-    template_content = [{ :name => 'header', :content => '<h1>Hello World</h1>'
-}]
+    template_content = [{ :name => 'header', :content => '<h1>Hello World</h1>' }]
     
     mail(to: addresses,
          from: 'John Doe <john.doe@example.com>',
