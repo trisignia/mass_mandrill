@@ -51,6 +51,19 @@ mail(to: addresses,
      merge_vars: merge_vars)
 ```
 
+Install
+-------
+
+Add mass_mandrill to your Gemfile and bundle. And create Rails initializer with
+your Mandrill API key:
+
+```ruby
+# config/initializers/mass_mandrill.rb
+MassMandrill.config do |config|
+  config.api_key = 'YOUR_API_KEY'
+end
+```
+
 Contributing to mandrill_template
 ---------------------------------
  
