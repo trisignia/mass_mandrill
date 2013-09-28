@@ -26,6 +26,7 @@ module MassMandrill
         :from_email => from_email(options[:from]),
         :from_name => from_name(options[:from]),
         :to => to(options[:to]),
+        :preserve_recipients => options[:preserve_recipients],
         :global_merge_vars => options[:global_merge_vars],
         :merge_vars => options[:merge_vars]
       }
