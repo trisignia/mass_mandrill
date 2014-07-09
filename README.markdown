@@ -14,7 +14,7 @@ class ExampleMailer < MassMandrill::MandrillMailer
   def example_notice(recipients)
     addresses = recipients.map { |recipient| recipient.email }
     global_merge_vars = [{ name: 'headline', content: 'This is first example notice' }]
-    merge_vars = recepients.map do |recipient|
+    merge_vars = recipients.map do |recipient|
       {
         :rcpt => recipient.email,
         :vars => [{ :name => 'first_name', :content => recipient.first_name }]
