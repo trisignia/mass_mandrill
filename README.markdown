@@ -1,7 +1,7 @@
 mass_mandrill
 =============
 
-mass_mandrill is thin wrapper around mandrill-api gem that makes sending emails with Mandrill easier and more pleasent to use. Goal is to reasemble Rails' ActiveMailer API.
+mass_mandrill is thin wrapper around mandrill-api gem that makes sending emails with Mandrill easier and more pleasent to use. Goal is to resemble Rails' ActionMailer API.
 
 mass_mandrill supports bulk email sending and Mandrill templates. To learn more about these topics, visit [Mandrill Support](http://help.mandrill.com/home).
 
@@ -54,15 +54,18 @@ mail(to: addresses,
 Install
 -------
 
-Add mass_mandrill to your Gemfile and bundle. And create Rails initializer with
-your Mandrill API key:
+Add mass_mandrill to your Gemfile:
 
-```ruby
-# config/initializers/mass_mandrill.rb
-MassMandrill.config do |config|
-  config.api_key = 'YOUR_API_KEY'
-end
-```
+    gem 'mass_mandrill'
+
+Install it:
+
+    bundle
+
+Or if you are not using bundler:
+
+    gem install mass_mandrill
+
 
 Contributing to mandrill_template
 ---------------------------------

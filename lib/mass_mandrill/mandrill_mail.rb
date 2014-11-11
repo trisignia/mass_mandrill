@@ -9,7 +9,7 @@ module MassMandrill
       @template_content = template_content
       @message = message
 
-      @mandrill = ::Mandrill::API.new(MassMandrill.config.api_key)
+      @mandrill = ::Mandrill::API.new
     end
 
     def deliver
