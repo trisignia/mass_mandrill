@@ -6,8 +6,8 @@ module MassMandrill
       @template_name = template_name
     end
 
-    def self.method_missing(method_name, *args)
-      new(method_name).send(method_name, *args)
+    def self.method_missing(method_name, *args, &block)
+      new(method_name).send(method_name, *args, &block)
     end
 
     def mail(options)
