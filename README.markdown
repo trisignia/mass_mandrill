@@ -51,6 +51,20 @@ mail(to: addresses,
      merge_vars: merge_vars)
 ```
 
+You can omit some options like `from` and `subject` in which case the default `from` and `subject` that are stored remotely on the Mandrill server will be used.
+You can also send additional configuration to the message (like `inline_css`, `track_opens`, `track_clicks`, `preserve_recipients`, ...) by passing a hash of `message_extra`.
+For a complete list of these parameters, check the [Mandrill Message API](https://mandrillapp.com/api/docs/messages.JSON.html).
+
+```ruby
+mail(to: addresses,
+     global_merge_vars: global_merge_vars,
+     merge_vars: merge_vars,
+     message_extra: {
+       inline_css: true,
+       track_opens: false
+     })
+```
+
 Install
 -------
 
@@ -66,9 +80,18 @@ Or if you are not using bundler:
 
     gem install mass_mandrill
 
+Place your Mandrill API key in your environment. If your application runs on [heroku](http://www.heroku.com), this is automatically done.
+If you are using [foreman](https://github.com/ddollar/foreman) to run your application, place it in your `.env`:
 
-Contributing to mandrill_template
----------------------------------
+    MANDRILL_APIKEY=PASTE_YOUR_API_KEY_HERE
+
+Otherwise, edit your `config/environment.rb` to include the key:
+
+    #config/environment.rb
+    ENV['MANDRILL_APIKEY'] = 'PASTE_YOUR_API_KEY_HERE'
+
+Contributing to mass_mandrill
+-----------------------------
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.

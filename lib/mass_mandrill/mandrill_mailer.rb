@@ -29,7 +29,7 @@ module MassMandrill
         :preserve_recipients => options[:preserve_recipients],
         :global_merge_vars => options[:global_merge_vars],
         :merge_vars => options[:merge_vars]
-      }
+      }.merge(options[:message_extra] || {})
     end
 
     def to(addresses)
