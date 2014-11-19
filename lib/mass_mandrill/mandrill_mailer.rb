@@ -6,8 +6,8 @@ module MassMandrill
       @template_name = template_name
     end
 
-    def self.method_missing(method_name, *args)
-      new(method_name).send(method_name, *args)
+    def self.method_missing(method_name, *args, &block)
+      new(method_name).send(method_name, *args, &block)
     end
 
     def mail(options)
@@ -29,7 +29,7 @@ module MassMandrill
         :preserve_recipients => options[:preserve_recipients],
         :global_merge_vars => options[:global_merge_vars],
         :merge_vars => options[:merge_vars]
-      }
+      }.merge(options[:message_extra] || {})
     end
 
     def to(addresses)
@@ -42,17 +42,17 @@ module MassMandrill
 
     def from_email(from)
       scan = scan_email(from)
-      scan.empty? ? from : scan.first[1..-2]
+      scan.blank? ? from : scan.first[1..-2]
     end
 
     def from_name(from)
-      unless scan_email(from).empty?
+      unless scan_email(from).blank?
         from.split(/\</).first.strip
       end
     end
 
     def scan_email(from)
-      from.scan(/\<.*\>/)
+      from.try(:scan, /\<.*\>/)
     end
   end
 end
