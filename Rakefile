@@ -46,7 +46,7 @@ require "mass_mandrill"
 
 namespace :test do
   desc "Send test email"
-  task :send_email, [:email] do |email|
-    MassMandrill::TestMailer.test_email(email).deliver
+  task :send_email, [:email] do |t, args|
+    MassMandrill::TestMailer.test_email(args[:email]).deliver
   end
 end
