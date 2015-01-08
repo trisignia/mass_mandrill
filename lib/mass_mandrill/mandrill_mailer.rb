@@ -42,11 +42,11 @@ module MassMandrill
 
     def from_email(from)
       scan = scan_email(from)
-      scan.blank? ? from : scan.first[1..-2]
+      scan ? scan.first[1..-2] : from
     end
 
     def from_name(from)
-      unless scan_email(from).blank?
+      if scan_email(from)
         from.split(/\</).first.strip
       end
     end
