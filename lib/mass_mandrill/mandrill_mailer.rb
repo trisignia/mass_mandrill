@@ -52,7 +52,7 @@ module MassMandrill
     end
 
     def scan_email(from)
-      from.try(:scan, /\<.*\>/)
+      from.scan(/\<.*\>/) if from
     end
   end
 end
