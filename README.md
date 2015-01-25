@@ -1,11 +1,13 @@
-mass_mandrill
+Mass Mandrill
 =============
 
-mass_mandrill is thin wrapper around mandrill-api gem that makes sending emails
+Mass Mandrill is thin wrapper around mandrill-api gem that makes sending emails
 with Mandrill easier and more pleasent to use. Goal is to resemble Rails'
-ActionMailer API.
+ActionMailer API. Although sending emails with Mass Mandrill looks like sending
+emails with ActionMailer, Mass Mandrill does not depend on Rails and it can be
+used in non-Rails applications.
 
-mass_mandrill supports bulk email sending and Mandrill templates. To learn more
+Mass Mandrill supports bulk email sending and Mandrill templates. To learn more
 about these topics, visit [Mandrill Support](http://help.mandrill.com/home).
 
 Example
@@ -97,7 +99,7 @@ in your `.env`:
     MANDRILL_APIKEY=PASTE_YOUR_API_KEY_HERE
 
 
-Contributing to mass_mandrill
+Contributing to Mass Mandrill
 -----------------------------
  
 * Check out the latest master to make sure the feature hasn't been implemented
@@ -113,10 +115,10 @@ Contributing to mass_mandrill
   have your own version, or is otherwise necessary, that is fine, but please
 isolate to its own commit so I can cherry-pick around it.
 
-Testing mass_mandrill
+Testing Mass Mandrill
 ---------------------
 
-mass_mandrill is covered with RSpec tests. Besides that, there is a Rake task
+Mass Mandrill is covered with RSpec tests. Besides that, there is a Rake task
 that sends test email to your email address for ultimate test. Follow these
 steps for running the Rake task:
 
