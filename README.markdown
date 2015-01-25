@@ -90,8 +90,7 @@ Or if you are not using bundler:
     gem install mass_mandrill
 
 Place your Mandrill API key in `MANDRILL_APIKEY` environment variable (e.g.
-`export MANDRILL_APIKEY=your-key`). If your application runs on
-[heroku](http://www.heroku.com), this is automatically done.  If you are using
+`export MANDRILL_APIKEY=your-key`). If you are using
 [foreman](https://github.com/ddollar/foreman) to run your application, place it
 in your `.env`:
 
